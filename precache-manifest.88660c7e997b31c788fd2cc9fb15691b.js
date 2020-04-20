@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e3b0ae003f542387ae5176c04a7f185a",
+    "revision": "b063955189ecf1b668b3858bc8165cf2",
     "url": "/sports/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/sports/static/css/2.b90ce945.chunk.css"
   },
   {
-    "revision": "1a250de788f7156147a1",
+    "revision": "9550a2d8bec93265fa8f",
     "url": "/sports/static/css/main.ff9b561b.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/sports/static/js/2.0a45016c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1a250de788f7156147a1",
-    "url": "/sports/static/js/main.cc11230d.chunk.js"
+    "revision": "9550a2d8bec93265fa8f",
+    "url": "/sports/static/js/main.582e5480.chunk.js"
   },
   {
     "revision": "cbd7478faa05d53ff95d",
