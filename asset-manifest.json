@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/sports/static/css/main.ff9b561b.chunk.css",
-    "main.js": "/sports/static/js/main.089e546f.chunk.js",
-    "main.js.map": "/sports/static/js/main.089e546f.chunk.js.map",
+    "main.js": "/sports/static/js/main.38693b84.chunk.js",
+    "main.js.map": "/sports/static/js/main.38693b84.chunk.js.map",
     "runtime-main.js": "/sports/static/js/runtime-main.b677f3c3.js",
     "runtime-main.js.map": "/sports/static/js/runtime-main.b677f3c3.js.map",
     "static/css/2.b90ce945.chunk.css": "/sports/static/css/2.b90ce945.chunk.css",
     "static/js/2.0a45016c.chunk.js": "/sports/static/js/2.0a45016c.chunk.js",
     "static/js/2.0a45016c.chunk.js.map": "/sports/static/js/2.0a45016c.chunk.js.map",
     "index.html": "/sports/index.html",
-    "precache-manifest.f5118b590f274d2e956a88c71d6f971e.js": "/sports/precache-manifest.f5118b590f274d2e956a88c71d6f971e.js",
+    "precache-manifest.a609aaf4af6780adf479fdcc3a0e14ab.js": "/sports/precache-manifest.a609aaf4af6780adf479fdcc3a0e14ab.js",
     "service-worker.js": "/sports/service-worker.js",
     "static/css/2.b90ce945.chunk.css.map": "/sports/static/css/2.b90ce945.chunk.css.map",
     "static/css/main.ff9b561b.chunk.css.map": "/sports/static/css/main.ff9b561b.chunk.css.map",
@@ -21,6 +21,6 @@
     "static/css/2.b90ce945.chunk.css",
     "static/js/2.0a45016c.chunk.js",
     "static/css/main.ff9b561b.chunk.css",
-    "static/js/main.089e546f.chunk.js"
+    "static/js/main.38693b84.chunk.js"
   ]
 }
