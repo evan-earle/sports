@@ -34,7 +34,9 @@ class NHLscores extends Component {
     }
 
     const info = await fetch(`/api/nhl/scores/${date}`);
+    console.log(info);
     const scores = await info.json();
+    console.log(scores);
 
     this.setState({ loading: false, scores: scores });
   };

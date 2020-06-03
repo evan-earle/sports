@@ -16,7 +16,8 @@ class NBAstandings extends Component {
   getStandings = async (format = "conference_team_standings") => {
     this.setState({ loading: true });
 
-    const info = await fetch("/api/nba/standings");
+    const info = await fetch(`/api/nba/standings/${format}`);
+
     const standings = await info.json();
 
     this.setState({ loading: false, standings: standings, format: format });
@@ -58,6 +59,7 @@ class NBAstandings extends Component {
               >
                 CONFERENCE
               </button>
+
               <button
                 className="standings-button"
                 style={
@@ -66,12 +68,13 @@ class NBAstandings extends Component {
                     : null
                 }
                 onClick={() => {
-                  this.getStandings("conference_team_standings");
+                  this.getStandings("division_team_standings");
                   this.buttonClick1();
                 }}
               >
                 DIVISION
               </button>
+
               <button
                 className="standings-button"
                 style={
@@ -80,7 +83,7 @@ class NBAstandings extends Component {
                     : null
                 }
                 onClick={() => {
-                  this.getStandings("conference_team_standings");
+                  this.getStandings("overall_team_standings");
                   this.buttonClick2();
                 }}
               >

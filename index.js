@@ -10,7 +10,7 @@ app.use(express.static(path.join(__dirname, "client/build")));
 app.use(cors());
 
 //Main page
-app.get("/api", (req, res) => {
+app.get("/api/", (req, res) => {
   request(
     "https://newsapi.org/v2/top-headlines?country=ca&category=sports&apiKey=5aad2a122a8f4983bdfc03458c1e815e",
     function (error, response, body) {
@@ -130,9 +130,9 @@ app.get(`/api/nba/scores/:date`, (req, res) => {
   );
 });
 
-app.get("/api/nba/standings", (req, res) => {
+app.get("/api/nba/standings/:format", (req, res) => {
   request(
-    "https://api.mysportsfeeds.com/v1.2/pull/nba/2019-2020-regular/conference_team_standings.json?",
+    `https://api.mysportsfeeds.com/v1.2/pull/nba/2019-2020-regular/${req.params.format}.json?`,
     {
       headers: {
         Authorization:
