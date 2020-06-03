@@ -17,7 +17,6 @@ class NBAstandings extends Component {
     this.setState({ loading: true });
 
     const info = await fetch(`/api/nba/standings/${format}`);
-
     const standings = await info.json();
 
     this.setState({ loading: false, standings: standings, format: format });

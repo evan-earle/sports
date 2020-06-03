@@ -16,7 +16,7 @@ class NHLstandings extends Component {
   getStandings = async (format = "conference_team_standings") => {
     this.setState({ loading: true });
 
-    const info = await fetch("/api/nhl/standings");
+    const info = await fetch(`/api/nhl/standings/${format}`);
     const standings = await info.json();
 
     this.setState({
@@ -62,6 +62,7 @@ class NHLstandings extends Component {
               >
                 CONFERENCE
               </button>
+
               <button
                 className="standings-button"
                 style={
@@ -76,6 +77,7 @@ class NHLstandings extends Component {
               >
                 DIVISION
               </button>
+
               <button
                 className="standings-button"
                 style={

@@ -50,9 +50,9 @@ app.get(`/api/nhl/scores/:date`, (req, res) => {
   );
 });
 
-app.get("/api/nhl/standings", (req, res) => {
+app.get("/api/nhl/standings/:format", (req, res) => {
   request(
-    "https://api.mysportsfeeds.com/v1.2/pull/nhl/2019-2020-regular/conference_team_standings.json?",
+    `https://api.mysportsfeeds.com/v1.2/pull/nhl/2019-2020-regular/${req.params.format}.json?`,
     {
       headers: {
         Authorization:
@@ -67,9 +67,9 @@ app.get("/api/nhl/standings", (req, res) => {
   );
 });
 
-app.get(`/api/nhl/leaders/:pStat`, (req, res) => {
+app.get("/api/nhl/pLeaders/:pStat", (req, res) => {
   request(
-    `https://api.mysportsfeeds.com/v1.2/pull/nba/2019-2020-regular/cumulative_player_stats.json?playerstats=PTS/G,REB/G,AST/G,STL/G,BS/G,FG%25,3P%25,FT%25,MIN/G,TOV/G&sort=${req.params.pStat}&limit=7`,
+    `https://api.mysportsfeeds.com/v1.2/pull/nhl/2019-2020-regular/cumulative_player_stats.json?sort=${req.params.pStat}&limit=7`,
     {
       headers: {
         Authorization:
@@ -84,9 +84,9 @@ app.get(`/api/nhl/leaders/:pStat`, (req, res) => {
   );
 });
 
-app.get(`/api/nhl/leaders/:gStat`, (req, res) => {
+app.get(`/api/nhl/gLeaders/:gStat`, (req, res) => {
   request(
-    `https://api.mysportsfeeds.com/v1.2/pull/nhl/2019-2020-regular/cumulative_player_stats.json?playerstats=W,GAA,Sv%25,SA,SO,GS&position=g&sort=${req.params.gStat}&limit=7`,
+    `https://api.mysportsfeeds.com/v1.2/pull/nhl/2019-2020-regular/cumulative_player_stats.json?sort=${req.params.gStat}&limit=7`,
     {
       headers: {
         Authorization:

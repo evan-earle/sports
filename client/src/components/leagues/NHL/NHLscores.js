@@ -27,16 +27,14 @@ class NHLscores extends Component {
 
   getScores = async () => {
     let date = moment(this.state.startDate).format("YYYYMMDD");
-    if (date > 20200404) {
-      date = 20200404;
+    if (date > 20200311) {
+      date = 20200311;
     } else if (date < 20191002) {
       date = 20191002;
     }
 
     const info = await fetch(`/api/nhl/scores/${date}`);
-    console.log(info);
     const scores = await info.json();
-    console.log(scores);
 
     this.setState({ loading: false, scores: scores });
   };
@@ -44,8 +42,8 @@ class NHLscores extends Component {
   render() {
     let date = moment(this.state.startDate).format("dddd MMMM Do");
     let lastDate = moment(this.state.startDate).format("YYYYMMDD");
-    if (lastDate > 20200404) {
-      date = "Saturday April 4th";
+    if (lastDate > 20200311) {
+      date = "Wednesday March 11th";
     } else if (lastDate < 20191002) {
       date = "Wednesday October 2nd";
     }

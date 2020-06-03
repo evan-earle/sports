@@ -20,7 +20,7 @@ class NBAleaders extends Component {
       "stats.AST%2FG.D",
       "stats.STL%2FG.D",
       "stats.BS%2FG.D",
-      "stats.FG%2525.D%26offset%35",
+      "stats.FG%2525.D%26offset%3D5",
       "stats.3P%2525.D%26offset%3D17",
       "stats.FT%2525.D%26offset%3D27",
       "stats.MIN%2FG.D",

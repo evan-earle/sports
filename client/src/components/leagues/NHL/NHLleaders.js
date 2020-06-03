@@ -24,26 +24,28 @@ class NHLleaders extends Component {
     ];
     const goalieStats = [
       "stats.W.D",
-      "stats.GAA.A&offset=80",
-      "stats.Sv%25.D",
+      "stats.GAA.D%26offset%3D70",
+      "stats.Sv%2525.D",
       "stats.SA.D",
       "stats.SO.D",
-      "stats.GS.D",
+      "stats.MIN.D",
     ];
     const playerLeaders = [];
     const goalieLeaders = [];
 
     for (let i = 0; i < playerStats.length; i++) {
       let pStat = playerStats[i];
-      const pInfo = await fetch(`/api/nhl/leaders/${pStat}`);
+
+      const pInfo = await fetch(`/api/nhl/pLeaders/${pStat}`);
       const playerInfo = await pInfo.json();
 
       playerLeaders.push(playerInfo);
     }
 
     for (let i = 0; i < goalieStats.length; i++) {
-      let gStat = playerStats[i];
-      const gInfo = await fetch(`/api/nhl/leaders/${gStat}`);
+      let gStat = goalieStats[i];
+
+      const gInfo = await fetch(`/api/nhl/gLeaders/${gStat}`);
       const goalieInfo = await gInfo.json();
 
       goalieLeaders.push(goalieInfo);
