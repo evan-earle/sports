@@ -176,6 +176,23 @@ app.get(`/api/nfl/news/:newsDate`, (req, res) => {
   );
 });
 
+app.get(`/api/nfl/scores/:date`, (req, res) => {
+  request(
+    `https://api.mysportsfeeds.com/v1.2/pull/nfl/2020-2021-regular/scoreboard.json?fordate=${req.params.date}`,
+    {
+      headers: {
+        Authorization:
+          "Basic " + btoa("4c6696aa-583c-4dcc-8f35-d24411:buster19"),
+      },
+    },
+    function (error, response, body) {
+      if (!error && response.statusCode == 200) {
+        res.send(body);
+      }
+    }
+  );
+});
+
 //MLB
 app.get(`/api/mlb/news/:newsDate`, (req, res) => {
   request(
