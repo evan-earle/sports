@@ -73,39 +73,43 @@ class NBAscores extends Component {
                 </label>
               </div>
             </div>
-            <div className="scores-games-container">
-              {this.state.scores.scoreboard.gameScore.map((item, i) => {
-                return (
-                  <div className="scores-games" key={i}>
-                    <div className="scores-games-names">
-                      <p>
-                        {item.game.awayTeam.Abbreviation}{" "}
-                        {item.game.awayTeam.Name}
-                      </p>
-                      <p>
-                        {item.game.homeTeam.Abbreviation}{" "}
-                        {item.game.homeTeam.Name}
-                      </p>
+            {this.state.scores.scoreboard.gameScore ? (
+              <div className="scores-games-container">
+                {this.state.scores.scoreboard.gameScore.map((item, i) => {
+                  return (
+                    <div className="scores-games" key={i}>
+                      <div className="scores-games-names">
+                        <p>
+                          {item.game.awayTeam.Abbreviation}{" "}
+                          {item.game.awayTeam.Name}
+                        </p>
+                        <p>
+                          {item.game.homeTeam.Abbreviation}{" "}
+                          {item.game.homeTeam.Name}
+                        </p>
+                      </div>
+                      <div className="scores-games-scores">
+                        <p>{item.awayScore}</p>
+                        <p>{item.homeScore}</p>
+                      </div>
+                      <div className="scores-games-time">
+                        {(() => {
+                          if (item.isCompleted === "true") {
+                            return <p>Final</p>;
+                          } else if (item.game.delayedOrPostponedReason) {
+                            return <p>Postponed</p>;
+                          } else {
+                            return <p>{item.game.time}</p>;
+                          }
+                        })()}
+                      </div>
                     </div>
-                    <div className="scores-games-scores">
-                      <p>{item.awayScore}</p>
-                      <p>{item.homeScore}</p>
-                    </div>
-                    <div className="scores-games-time">
-                      {(() => {
-                        if (item.isCompleted === "true") {
-                          return <p>Final</p>;
-                        } else if (item.game.delayedOrPostponedReason) {
-                          return <p>Postponed</p>;
-                        } else {
-                          return <p>{item.game.time}</p>;
-                        }
-                      })()}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+                  );
+                })}
+              </div>
+            ) : (
+              <h3>No games scheduled</h3>
+            )}
           </div>
         </div>
       );
